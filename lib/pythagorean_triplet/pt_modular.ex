@@ -19,7 +19,7 @@ defmodule PythagorasModular do
     @moduledoc "filter"
     def filter(sequence) do
       Enum.filter(sequence, fn {a, b, c} ->
-        c > b and (a * a + b * b == c * c)
+        c > b and a * a + b * b == c * c
       end)
     end
   end
@@ -35,5 +35,4 @@ defmodule PythagorasModular do
     |> Filter.filter()
     |> Reducer.reduce()
   end
-
 end

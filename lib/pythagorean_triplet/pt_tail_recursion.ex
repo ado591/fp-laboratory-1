@@ -11,8 +11,10 @@ defmodule PythagorasTail do
 
   defp search(a, _b) when a >= @sum - 2, do: nil
   defp search(a, b) when b >= @sum - a, do: search(a + 1, a + 2)
+
   defp search(a, b) do
     c = @sum - a - b
+
     if c <= b do
       search(a, b + 1)
     else

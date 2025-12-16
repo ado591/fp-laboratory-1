@@ -1,14 +1,15 @@
 defmodule AmicableTest do
   use ExUnit.Case
 
-  @answer 31_626  # руками посчитали
+  # руками посчитали
+  @answer 31_626
 
   test "tail recursive version works" do
     assert AmicableTail.solve() == @answer
   end
 
   test "non-tail recursive version works" do
-    assert AmicableRecursion .solve() == @answer
+    assert AmicableRecursion.solve() == @answer
   end
 
   test "modular version works" do

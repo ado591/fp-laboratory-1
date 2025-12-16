@@ -12,6 +12,7 @@ defmodule PythagorasRec do
   def triplet_product, do: solve()
 
   defp find_triplet(a) when a >= @sum - 2, do: nil
+
   defp find_triplet(a) do
     case find_for_a(a, a + 1) do
       nil -> find_triplet(a + 1)
@@ -20,8 +21,10 @@ defmodule PythagorasRec do
   end
 
   defp find_for_a(_a, b) when b >= @sum, do: nil
+
   defp find_for_a(a, b) do
     c = @sum - a - b
+
     if c <= b do
       find_for_a(a, b + 1)
     else

@@ -30,6 +30,7 @@ defmodule AmicableStream do
 
   defp divisor_sum_contribution(d, n) do
     other = div(n, d)
+
     case {d, other} do
       {1, ^n} -> 1
       {1, other} -> 1 + other

@@ -19,6 +19,7 @@ defmodule AmicableModular do
 
     defp sum_divs(n) do
       limit = :math.sqrt(n) |> trunc()
+
       1..limit
       |> Enum.reduce(0, fn d, acc ->
         with true <- rem(n, d) == 0,
