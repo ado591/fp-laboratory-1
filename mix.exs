@@ -40,7 +40,6 @@ defmodule FpLab1.MixProject do
   end
 
   defp aliases do
-    [
-    ]
+    []
   end
 end
