@@ -18,7 +18,9 @@ defmodule PythagorasRec do
       nil ->
         triplet = find_triplet(a + 1)
         if triplet, do: triplet, else: nil
-      triplet -> triplet
+
+      triplet ->
+        triplet
     end
   end
 
@@ -27,16 +29,15 @@ defmodule PythagorasRec do
   defp find_for_a(a, b) do
     c = @sum - a - b
 
-    if c <= b do
-      triplet = find_for_a(a, b + 1)
-      if triplet, do: triplet, else: nil
-    else
-      if a * a + b * b == c * c do
+    cond do
+      c <= b ->
+        find_for_a(a, b + 1)
+
+      a * a + b * b == c * c ->
         {a, b, c}
-    else
-      triplet = find_for_a(a, b + 1)
-      if triplet, do: triplet, else: nil
+
+      true ->
+        find_for_a(a, b + 1)
     end
-  end
   end
 end

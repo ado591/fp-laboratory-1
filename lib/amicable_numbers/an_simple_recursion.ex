@@ -24,6 +24,7 @@ defmodule AmicableRecursion do
   end
 
   defp calculate_divisors(i, limit, _n) when i > limit, do: 1
+
   defp calculate_divisors(i, limit, n) do
     res = calculate_divisors(i + 1, limit, n)
 
